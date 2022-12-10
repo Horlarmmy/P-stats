@@ -18,7 +18,7 @@ function Portfolio ({wallet_addr}) {
             }
    return(
     <>
-    <p>Total Portfolio: &nbsp; {total_port.slice(0,5)}USD </p>
+    <p>Total Portfolio: &nbsp; {total_port}USD </p>
     </>
 
    )

@@ -6,16 +6,16 @@ class PieRechartComponent extends React.Component {
     COLORS = ["#8884d8", "#82ca9d", "#FFBB28", "#FF8042", "#AF19FF"];
     pieData = [
       {
-         name: "Apple",
-         value: 123.6
+         name: "USD Coin (USDC)",
+         value: 152.0593
       },
       {
-         name: "Apples",
-         value: 13.6
+         name: "Meson Token (MSN)",
+         value: 0.32061
       },
       {
-         name: "Apprle",
-         value: 12.6
+         name: "Evmos (EVMOS)",
+         value: 0.026
       }
     ]
     CustomTooltip = ({ active, payload, label }) => {
