@@ -1,27 +1,26 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-function Portfolio () {
-        useEffect(() => {
-            fetch("https://api.covalenthq.com/v1/9001/address/0xbf66d3249d8191e86ac50590255c5545ad4377bc/balances_v2/?key=ckey_b9fba69b6b1843db94e6925d05d")
+
+function Portfolio ({wallet_addr}) {
+        const url_api = "https://api.covalenthq.com/v1/9001/address/" + wallet_addr + "/balances_v2/?key=ckey_b9fba69b6b1843db94e6925d05d";
+        function getData() {
+            fetch(url_api)
             .then(response => response.json())
-            .then(json => { const port_data = json.data.items; 
-                            console.log(port_data);
-            });
-            }, []);
+            .then(json => setItem(json.data.items));
+            }
+            const [item, setItem] = useState([]);
+            useEffect(() => {getData()});
 
             var total_port = 0;
-            console.log(port_data);
-            for (let i = 0; i < port_data.length; i++) {
-                total_port += port_data[i].quote;
+            for (let i = 0; i < item.length; i++) {
+                total_port += item[i].quote;
             }
    return(
     <>
-        <p>Fetching data...</p>
-    <p>Total Portfolio: &nbsp; {total_port}</p>
+    <p>Total Portfolio: &nbsp; {total_port.slice(0,5)}USD </p>
     </>
 
    )
 }
-
 export default Portfolio;

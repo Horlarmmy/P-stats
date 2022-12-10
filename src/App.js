@@ -31,7 +31,10 @@ function App() {
             <br/>
             <p>Wallet Address: &nbsp; {walletAddress} </p>
             <br/>
-
+            <Portfolio wallet_addr={walletAddress} />
+            <br/>
+            <PieRechartComponent />
+            <br/>
             <h2> Token Balances </h2>
             <TokenBalances address={walletAddress} chainId={9001}/>
             <br/>
@@ -41,6 +44,7 @@ function App() {
             <br/>
             <h2> Transactions</h2>
             <Transactions address={walletAddress} chainId={9001}/>
+
     
 
             </div>
@@ -56,12 +60,11 @@ function App() {
                 <br/>
                 <p>Your Total worth at your fingertip...</p>
 
-            <PieRechartComponent/>
-            <Portfolio/>
             </div>
             </>
         )
     }
 
 }
+
 export default App;

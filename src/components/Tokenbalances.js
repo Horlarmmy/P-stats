@@ -5,27 +5,19 @@ import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 class PieRechartComponent extends React.Component {
     COLORS = ["#8884d8", "#82ca9d", "#FFBB28", "#FF8042", "#AF19FF"];
     pieData = [
-       {
-          name: "Apple",
-          value: 54.85
-       },
-       {
-          name: "Samsung",
-          value: 47.91
-       },
-       {
-          name: "Redmi",
-          value: 16.85
-       },
-       {
-          name: "One Plus",
-          value: 16.14
-       },
-       {
-          name: "Others",
-          value: 10.25
-       }
-    ];
+      {
+         name: "Apple",
+         value: 123.6
+      },
+      {
+         name: "Apples",
+         value: 13.6
+      },
+      {
+         name: "Apprle",
+         value: 12.6
+      }
+    ]
     CustomTooltip = ({ active, payload, label }) => {
        if (active) {
           return (
